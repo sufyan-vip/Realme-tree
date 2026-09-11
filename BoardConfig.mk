@@ -115,11 +115,24 @@ TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_REPACKTOOLS := false
 
-# Slim recovery to fit 64MB boot partition (stock kernel alone is ~48MB)
+# Crypto/fastbootd explicitly off (saves MBs if default-on, harmless otherwise)
+TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO_FBE := false
+TW_INCLUDE_FASTBOOTD := false
+
+# Cut extra filesystem tools to fit 64MB boot partition (stock kernel ~48MB)
+TW_INCLUDE_NTFS_3G := false
+TW_NO_EXFAT_FUSE := true
+
+# Cut useless extras (MTP + all main features kept)
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_BASH := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_TWRPAPP := true
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+TW_INCLUDE_RESETPROP := false
+TWRP_INCLUDE_LOGCAT := false
