@@ -117,7 +117,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := false
 
-# Crypto/fastbootd explicitly off (saves MBs if default-on, harmless otherwise)
+# Crypto/fastbootd explicitly off
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
 TW_INCLUDE_FASTBOOTD := false
@@ -126,13 +126,14 @@ TW_INCLUDE_FASTBOOTD := false
 TW_INCLUDE_NTFS_3G := false
 TW_NO_EXFAT_FUSE := true
 
-# Cut useless extras (MTP + all main features kept)
+# Cut extras to fit 64MB (MTP excluded - only way to fit, see note below)
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_BASH := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+TW_EXCLUDE_MTP := true
 TW_INCLUDE_RESETPROP := false
 TWRP_INCLUDE_LOGCAT := false
+TW_NO_USB_STORAGE := true
