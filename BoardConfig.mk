@@ -116,3 +116,16 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+
+# Slim ~2.5MB to fit 64MB boot partition (MTP + all main features kept)
+TW_INCLUDE_NTFS_3G := false
+TW_NO_EXFAT_FUSE := true
+TW_EXCLUDE_TWRPAPP := true
+TW_EXCLUDE_APEX := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_TZDATA := true
+TW_INCLUDE_RESETPROP := false
+TWRP_INCLUDE_LOGCAT := false
+TW_NO_USB_STORAGE := true
